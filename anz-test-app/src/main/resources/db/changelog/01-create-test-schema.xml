@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="01" author="shaleen">
+    <createTable tableName="transaction"
+      remarks="A table to contain all transactions">
+     <!--  <column name="custId" type="int">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column> -->
+      <column name="accountNumber" type="varchar(25)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="accountName" type="varchar(25)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="valueDate" type="varchar(15)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="currency" type="varchar(10)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="debitAmount" type="varchar(25)">
+        <constraints nullable="true" unique="false"/>
+      </column>
+       <column name="creditAmount" type="varchar(25)">
+        <constraints nullable="true" unique="false"/>
+      </column>
+       <column name="debitCredit" type="varchar(25)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="transactionNarrative" type="varchar(50)">
+        <constraints nullable="true" unique="false"/>
+      </column>
+    </createTable>
+
+    <createTable tableName="account"
+      remarks="A table to contain all the accounts">
+       <column name="custId" type="int">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="accountNumber" type="varchar(25)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+       <column name="accountName" type="varchar(25)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="accountType" type="varchar(25)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="balanceDate" type="varchar(15)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="currency" type="varchar(10)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="openingBalance" type="varchar(50)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+    </createTable>
+
+  </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="02" author="shaleen">
+    <comment>Inserting Accounts</comment>
+    <insert tableName="account">
+      <column name="custId" valueNumeric="1"/>
+      <column name="accountNumber" value="101010101010"/>
+      <column name="accountName" value="SGSavings726"/>
+      <column name="accountType" value="Savings"/>
+      <column name="balanceDate" value="24-01-2019"/>
+      <column name="currency" value="SGD"/>
+      <column name="openingBalance" value="84,5476.44"/>
+    </insert>
+     <insert tableName="account">
+      <column name="custId" valueNumeric="1"/>
+      <column name="accountNumber" value="202020202020"/>
+      <column name="accountName" value="AUSavings933"/>
+      <column name="accountType" value="Savings"/>
+      <column name="balanceDate" value="24-01-2019"/>
+      <column name="currency" value="AUD"/>
+      <column name="openingBalance" value="44,345.44"/>
+    </insert>
+   
+  </changeSet>
+</databaseChangeLog>

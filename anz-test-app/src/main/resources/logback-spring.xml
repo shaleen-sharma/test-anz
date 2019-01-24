@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" debug="true" scanPeriod="30 seconds">
+
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+	<conversionRule conversionWord="wex"
+	                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+
+	<!--  Note: Not logging any request metadata because this is not sent through the HTTP headers -->
+	<property name="CONSOLE_LOG_PATTERN"
+			  value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(---){faint} %clr([%t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wex"/>
+
+	<!--  If we're not running in local, log to file, else to console (default to prod config) -->
+	<Appender name="APP_LOG" class="ch.qos.logback.core.ConsoleAppender">
+		<Encoder>
+			<Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+		</Encoder>
+	</Appender>
+	<!-- Note: Specific logging can be overwritten here at runtime, and will take effect after the scan period and a certain # of log msgs have been written -->
+	<!--
+    <logger name="com.package.name" level="log level (DEBUG, INFO, WARN) etc." additivity="false">
+        <appender-ref ref="APP_LOG" />
+    </logger>
+    -->
+
+	<!-- Package level logging is configured in application.yml file -->
+	<root level="INFO">
+		<appender-ref ref="APP_LOG" />
+	</root>
+</configuration>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="03" author="shaleen">
+    <comment>Inserting Transactions</comment>
+    <insert tableName="transaction">
+      <column name="accountNumber" valueNumeric="101010101010"/>
+      <column name="accountName" value="Current Account"/>
+      <column name="valueDate" valueNumeric="24-01-2019"/>
+      <column name="currency" value="SGD"/>
+      <column name="debitAmount" value="111.0"/>
+      <column name="creditAmount" value="100"/>
+      <column name="debitCredit" value="Credit"/>
+      <column name="transactionNarrative" value="sample Tran narrative"/>
+    </insert>
+       <insert tableName="transaction">
+      <column name="accountNumber" valueNumeric="101010101010"/>
+      <column name="accountName" value="Current Account"/>
+      <column name="valueDate" valueNumeric="24-01-2019"/>
+      <column name="currency" value="SGD"/>
+      <column name="debitAmount" value="112.0"/>
+      <column name="creditAmount" value="101"/>
+      <column name="debitCredit" value="Credit"/>
+      <column name="transactionNarrative" value="sample Tran narrative 1"/>
+    </insert>
+        <insert tableName="transaction">
+      <column name="accountNumber" valueNumeric="101010101010"/>
+      <column name="accountName" value="Current Account"/>
+      <column name="valueDate" valueNumeric="24-01-2019"/>
+      <column name="currency" value="SGD"/>
+      <column name="debitAmount" value="113.0"/>
+      <column name="creditAmount" value="102"/>
+      <column name="debitCredit" value="Credit"/>
+      <column name="transactionNarrative" value="sample Tran narrative 2"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
